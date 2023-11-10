@@ -16,7 +16,7 @@ int main(){
            b[i] = a[i];
         }
         for(int i=0; i<n; i++){
-          for(int j=i+1; j<=n; j++){
+          for(int j=i+1; j<n; j++){
             if(b[i]>b[j]){
               int temp = b[i];
               b[i] = b[j];
@@ -24,9 +24,9 @@ int main(){
             }
           }
         }
-        for(int i=0; i<n; i++){
+        for(int i=0; i<=n-1; i++){
             
-           c[i] = (a[i] - b[i]);
+           c[i] = abs(a[i] - b[i]);
         }
 
         for(int i=0; i<n; i++){
