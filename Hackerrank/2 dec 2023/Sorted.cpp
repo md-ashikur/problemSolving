@@ -1,13 +1,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+int isSorted(int a[], int n)
+{
+    for (int i = 0; i < n-1; i++)
+    {
+
+        if (a[i] > a[+1])
+        {
+            return 0;
+        }
+    }
+    return 1;
+}
+
 int main()
 {
     int t;
     cin >> t;
     while (t--)
     {
-    int n;
+        int n;
         cin >> n;
         int a[n];
         for (int i = 0; i < n; i++)
@@ -15,22 +28,13 @@ int main()
             cin >> a[i];
         }
 
-        bool flag = false;
-        for (int i = 0; i < n; i++)
+        if (isSorted(a, n))
         {
-            for (int j = i + 1; j <= n; j++)
-            {
-                if (a[i] < a[j])
-                {
-                    flag = true;
-                }
-               
-            }
+cout << "YES" << endl;
+            
         }
-        if (flag == true){
-            cout << "YES" << endl;
-        }
-        else{
+        else
+        {
             cout << "NO" << endl;
         }
     }
