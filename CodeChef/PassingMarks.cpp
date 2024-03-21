@@ -15,7 +15,7 @@ int main() {
         sort(a.begin(), a.end());
         
         int pass = a[n-x];
-        cout<<pass<<endl;
+        
         cout << max(pass - 1, 0) << endl;
     }
 
