@@ -1,40 +1,32 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main()
-{
+int solver(int a, int b, int k){
+    int ops=0; 
+        while(true){
+            if(b/k>=a && b%k==0){ 
+                ops++; 
+                b/=k; 
+            } 
+            else if(b%k==0){ 
+                ops+=(b-a); 
+                break; 
+            }   
+        else{ 
+            ops+=(b%k); 
+            b=b-b%k; 
+            } 
+        } 
+        return ops;
+}
 
-    int t;
-    cin >> t;
-    while (t--)
-    {
-        long long int a, b, k;
-        cin >> a >> b >> k;
-        int x = a, ans = 0;
-    if (k > b)
-    {
-        cout << b - a << endl;
-    }
-    while (b != a)
-    {
-
-        if (b % 2 != 0)
-        {
-
-            b--;
-        }
-        else if (b / k >= x)
-        {
-            b = (b / k) + (b % k);
-        }
-        else
-        {
-            ans += b - a;
-            break;
-        }
-    }
-    cout << ans << endl;
-    }
-
-    return 0;
+int main(){ 
+    int t; 
+    cin>>t; 
+    while(t--){ 
+        int a,b,k; 
+        cin>>a>>b>>k; 
+        cout<<solver(a,b,k)<<endl; 
+    }  
+return 0; 
 }
